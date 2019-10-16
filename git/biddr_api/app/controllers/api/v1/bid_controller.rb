@@ -5,14 +5,13 @@ def create
   @auction = Auction.find params[:auction_id]
   @bid = Bid.new bid_params
   @bid.auction = @auction
+  @bid.user =current_user
   if @bid.save
     render( json: {id: @bid.auction_id})
   else
-    render(
       render(
-        json: {errors: bid.errors},
+        json: {errors: @bid.errors},
         status: 422
-      )
     )
   end
 
