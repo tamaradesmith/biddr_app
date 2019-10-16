@@ -1,22 +1,31 @@
+body{
+  font-size: 1.5em;
+
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #09d3ac;
+.NavBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 75px;
+  background: rgb(178, 199, 199);
+  padding: 0.5em;
+}
+.icon {
+  width: 75px;
+}
+.menu-icon {
+  flex: 1;
+}
+.menu-item {
+  text-decoration: none;
+  color: darkslategray;
+  margin: 0 1em;
+}
+.card-list{
+  margin: .5em 0;
 }
