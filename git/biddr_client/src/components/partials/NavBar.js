@@ -20,6 +20,7 @@ function NavBar(props) {
       </figure>
       <NavLink to="/" className="menu-item"> Home </NavLink>
       <NavLink to="/auctions" className="menu-item"> Auctions</NavLink>
+      <NavLink to="/auctions/new">New Auction</NavLink>
       {currentUser ? (
         <>
           <p> {currentUser.full_name}</p>
