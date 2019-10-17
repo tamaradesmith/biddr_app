@@ -1,6 +1,13 @@
 const BASE_URL = 'http://localhost:3000/api/v1'
 
-
+const User = {
+  current(){
+    return fetch(`${BASE_URL}/users/current`, {
+      method: "GET",
+      credentials: "include"
+    }).then(res => res.json())
+  },
+}
 
 const Auction ={
   all(){
@@ -15,5 +22,23 @@ const Auction ={
   }
 }
 
+const Session = {
+  create(params) {
+    return fetch(`${BASE_URL}/session`, {
+      method: "POST",
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(params)
+    }).then(res =>  res.json());
+  },
+  destroy(id){
+    return fetch(`${BASE_URL}/session/${id}`, {
+      method: "DELETE",
+      credentials: "include"
+    }).then(res=> res.json
+    )}
+}
 
-export { Auction };
+export { User, Auction, Session };
