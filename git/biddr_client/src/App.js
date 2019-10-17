@@ -6,8 +6,10 @@ import AuctionIndex from './components/AuctionIndex'
 import AuctionShow from './components/AuctionShow'
 import SignIn from './components/partials/SignIn'
 import { User, Session } from "./requests"
-import './App.css';
+import AuthRoute from "./components/partials/AuthRoute";
 import AuctionNew from './components/AuctionNew';
+
+import './App.css';
 
 class App extends React.Component {
   state = {
@@ -55,8 +57,18 @@ if (isLoading){
         <Switch>
           <Route path="/" exact component={WelcomePage} />
           <Route path="/auctions" exact component={AuctionIndex} />
-          <Route path="/auctions/new" component={AuctionNew} />
-          <Route path="/auctions/:id" exact component={routeProps => (<AuctionShow {...routeProps} />)} />
+
+          <AuthRoute
+          isAllowed={currentUser}
+           path="/auctions/new" component={AuctionNew} />
+
+          <Route
+            path="/auction/:id"
+            render={routeProps => (
+              <AuctionShow {...routeProps}
+                currentUser={this.state.currentUser}
+              />
+            )} />
 
           {/* users */}
 
