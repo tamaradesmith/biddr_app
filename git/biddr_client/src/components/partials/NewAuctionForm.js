@@ -18,20 +18,20 @@ function NewAuctionForm(props) {
   }
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="title"> Title: </label>
-        <input type="text" name="title" id="title" placeholder=" Pleace Enter Title" />
+      <div className="form new-auction">
+        <label htmlFor="title" className="form-label"> Title: </label>
+        <input type="text" name="title" id="title" placeholder=" Pleace Enter Title" className="form-field" />
 
-        <label htmlFor="description"> Description: </label>
-        <input type="text" name="description" id="description" placeholder=" Pleace Enter description" />
+        <label htmlFor="description" className="form-label"> Description: </label>
+        <input type="text" name="description" id="description" placeholder=" Pleace Enter description" className="form-field" />
 
-        <label htmlFor="reserve"> Reserve price: </label>
-        <input type="number" name="reserve" id="reserve" />
+        <label htmlFor="reserve" className="form-label"> Reserve price: </label>
+        <input type="number" name="reserve" id="reserve" className="form-field" />
 
-        <label htmlFor="closing"> Closing  date: </label>
-        <input type="date" name="closing" id="closing" />
+        <label htmlFor="closing" className="form-label"> Closing  date: </label>
+        <input type="date" name="closing" id="closing" className="form-field" />
 
-      <button type="submit"> Create new Auction</button>
+        <button type="submit" className="form-button"> Create new Auction</button>
 
 
       </div>

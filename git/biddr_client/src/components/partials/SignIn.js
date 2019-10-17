@@ -37,15 +37,15 @@ class SignIn extends React.Component {
     const { errors } = this.state;
     return (
       <form onSubmit={this.createSession} >
-        <div>
-          <label htmlFor="email">Email</label>
-          <input type="email" name="email" id="email" placeholder="enter email" />
+        <div className="form">
+          <label htmlFor="email" className="form-label">Email</label>
+          <input type="email" name="email" id="email" placeholder="enter email" className="form-field" />
+     
+
+          <label htmlFor="password" className="form-label">Password</label>
+          <input type="password" name="password" id="password" placeholder="Password" className="form-field" />
+        <button className="form-button"> SignIn</button>
         </div>
-        <div className="field">
-          <label htmlFor="password">Password</label>
-          <input type="password" name="password" id="password" placeholder="Password" />
-        </div>
-        <button> SignIn</button>
     
           {errors.length > 0 ? (
             <div className="ui negative message">

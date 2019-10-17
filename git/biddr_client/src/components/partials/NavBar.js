@@ -20,15 +20,15 @@ function NavBar(props) {
       </figure>
       <NavLink to="/" className="menu-item"> Home </NavLink>
       <NavLink to="/auctions" className="menu-item"> Auctions</NavLink>
-      <NavLink to="/auctions/new">New Auction</NavLink>
+      <NavLink to="/auctions/new" className="menu-item">New Auction</NavLink>
       {currentUser ? (
         <>
-          <p> {currentUser.full_name}</p>
-          <a href="#sign_out" onClick={handleSignOutClick}>Sign Out</a>
+          <p className="menu-item"> {currentUser.full_name}</p>
+          <a href="#sign_out" onClick={handleSignOutClick} className="menu-item">Sign Out</a>
         </>
       ) : (
           <>
-            <NavLink to="/sign_in"> Sign In </NavLink>
+            <NavLink to="/sign_in" className="menu-item"> Sign In </NavLink>
           </>
         )}
     </main>

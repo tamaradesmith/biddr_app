@@ -60,10 +60,10 @@ if (isLoading){
 
           <AuthRoute
           isAllowed={currentUser}
-           path="/auctions/new" component={AuctionNew} />
+           path="/auctions/new" exact component={AuctionNew} />
 
           <Route
-            path="/auction/:id"
+            path="/auctions/:id"
             render={routeProps => (
               <AuctionShow {...routeProps}
                 currentUser={this.state.currentUser}
