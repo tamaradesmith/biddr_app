@@ -7,7 +7,7 @@ class Api::V1::UsersController < Api::ApplicationController
   end
 
   def create
-    user= USer.new user_params
+    user= User.new user_params
     if user.save
       session[:user_id] = user.id
       render json: {id: user.id}

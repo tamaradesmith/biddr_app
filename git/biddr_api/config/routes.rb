@@ -5,8 +5,12 @@ Rails.application.routes.draw do
       resources :auctions do
         resources :bid, only: [:create]
       end
-      resources :session, only: [:create, :destroy]
+      resources :session, only: [:create, :destroy] do
+        get :current, on: :collection
+      end
+      resources :users, only:[:new, :create] do
+        get :current, on: :collection
+      end
     end
   end
-  resources :users, only:[:new, :create]
 end

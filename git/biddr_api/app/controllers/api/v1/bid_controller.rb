@@ -2,8 +2,9 @@ class Api::V1::BidController < Api::ApplicationController
 
 
 def create
+
   @auction = Auction.find params[:auction_id]
-  @bid = Bid.new bid_params
+  @bid = Bid.new bid: params[:bid]
   @bid.auction = @auction
   @bid.user =current_user
   if @bid.save
